@@ -18,5 +18,9 @@
 ## Linux
 * Packages for Linux are tar archives including a copy of Swift compiler, lldb and related tools.
 * You can install them anywhere as long as they are in your `PATH`.
+* Dependencies
+```bash
+$ sudo apt-get install clang libicu-dev
+```
 # References
 * https://swift.org/download/
