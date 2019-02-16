@@ -90,7 +90,7 @@ func sayHello(name: String) {
 if CommandLine.arguments.count != 2 {
 	print("Usage: hello NAME")
 } else {
-	let name = CommandLine.arguments[1i]
+	let name = CommandLine.arguments[1]
 	sayHello(name: name)
 }
 ```
@@ -158,6 +158,7 @@ $ lldb Factorial
 ```
 (lldb) br di
 (lldb) c
+```
 # References
 * https://swift.org/getting-started/
 * [LLDB Tutorial](http://lldb.llvm.org/tutorial.html)
