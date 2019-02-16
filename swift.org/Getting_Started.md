@@ -48,17 +48,17 @@ $ cd Hello
 $ swift package init
 ```
 	* By default this will create a library package directory structure.
-	```
-	|-- Package.swift
-	|-- README.md
-	|-- Sources
-	|   |-- Hello
-	|      |-- Hello.swift
-	|-- Tests
-	    |-- HelloTests
-	    |   |--HelloTests.swift
-	    |-- LinuxMain.swift
-	```
+```
+|-- Package.swift
+|-- README.md
+|-- Sources
+|   |-- Hello
+|      |-- Hello.swift
+|-- Tests
+    |-- HelloTests
+    |   |--HelloTests.swift
+    |-- LinuxMain.swift
+```
 * You can use `swift build` to build a package.
 	* This will download, resolve and compile dependencies mentioned in the manifest file `Package.swift`.
 * To run thes tests for a package, use `swift test`.
