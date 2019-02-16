@@ -47,7 +47,7 @@ $ mkdir Hello
 $ cd Hello
 $ swift package init
 ```
-	* By default this will create a library package directory structure.
+* By default this will create a library package directory structure.
 ```
 |-- Package.swift
 |-- README.md
