@@ -8,7 +8,7 @@
 * Compiler is responsible for translating Swift source code into efficient and executable machine code.
 * Swift compiler front-end also supports a number of tools, including IDE integration with syntax-coloring, code completion and other conveniences.
 * Major Components :
-	* _Parsing : _
+	* __Parsing : __
 		* Simple, recursive-descent parser implemented in [lib/Pare](https://github.com/apple/swift/tree/master/lib/Parse) with an integrated, hand-coded lexer.
 		* Responsible for generating an Abstract Syntax Tree (AST) without any semantic or type information.
 		* Responsible for emitting warnings or errors for grammatical problems with input source.
