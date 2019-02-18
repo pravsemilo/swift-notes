@@ -65,7 +65,7 @@
 			* In such cases, one should use a leading underscore to indicate that the public API is meant to be private.
 		* The policy for access control in the stadard library is documented in [docs/AccessControlInStdlib.rst](https://github.com/apple/swift/blob/master/docs/AccessControlInStdlib.rst).
 	* __Repetitive code uses gyb :__
-		* `gyb' is a simple tool for generating repetitive code from a template.
+		* `gyb` is a simple tool for generating repetitive code from a template.
 		* Used to create the definitions of various sized integer types (`Int8`, `Int16`, `Int32`, `Int64` etc.) from a single source.
 	* __Testing is tightly coupled with the compiler :__
 		* Standard library and compiler evolve together.
