@@ -12,7 +12,7 @@
 		* Simple, recursive-descent parser implemented in [lib/Pare](https://github.com/apple/swift/tree/master/lib/Parse) with an integrated, hand-coded lexer.
 		* Responsible for generating an Abstract Syntax Tree (AST) without any semantic or type information.
 		* Responsible for emitting warnings or errors for grammatical problems with input source.
-	* __Semantic_ analysis :__
+	* __Semantic analysis :__
 		* Implemented in [lib/Sema](https://github.com/apple/swift/tree/master/lib/Sema).
 		* Responsible for taking the parsed AST and transforming into a well-formed, fully-type-checked form for the AST.
 		* Responsbile for emitting warnings or error for semantic problems in the source code.
