@@ -61,10 +61,10 @@ $ swift package init
 ```
 * You can use `swift build` to build a package.
 	* This will download, resolve and compile dependencies mentioned in the manifest file `Package.swift`.
-* To run thes tests for a package, use `swift test`.
+* To run the tests for a package, use `swift test`.
 ## Building an Executable
 * A target is considered as an executable if it contains a file named `main.swift`.
-* The package manager will comiple that file into a binary executable.
+* The package manager will compile that file into a binary executable.
 ```bash
 $ mkdir Hello
 $ cd Hello

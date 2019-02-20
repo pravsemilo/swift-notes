@@ -1,4 +1,4 @@
-* Main Swift repository contains code for
+* [Main Swift repository](https://github.com/apple/swift) contains code for
 	* Swift compiler
 	* Standard library
 	* SourceKit (for IDE integration)
@@ -9,7 +9,7 @@
 * Swift compiler front-end also supports a number of tools, including IDE integration with syntax-coloring, code completion and other conveniences.
 * Major Components :
 	* __Parsing :__
-		* Simple, recursive-descent parser implemented in [lib/Pare](https://github.com/apple/swift/tree/master/lib/Parse) with an integrated, hand-coded lexer.
+		* Simple, recursive-descent parser implemented in [lib/Parse](https://github.com/apple/swift/tree/master/lib/Parse) with an integrated, hand-coded lexer.
 		* Responsible for generating an Abstract Syntax Tree (AST) without any semantic or type information.
 		* Responsible for emitting warnings or errors for grammatical problems with input source.
 	* __Semantic analysis :__
