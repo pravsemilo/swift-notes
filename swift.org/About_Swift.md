@@ -1,14 +1,14 @@
 * General purpose programming language.
 * Can be used for system programming, mobile and desktop apps and scaling up to cloud services.
 * Designed to make writing and maintaining correct programs easier for the developer.
-* `Safe`
+* __Safe__
 	* Most obvious way to write code should behave in a safe manner.
 	* Undefined behavior is enemy of safety.
 	* Opting for saftey means Swift will feel strict.
-* `Fast`
+* __Fast__
 	* Intended as a replacement for C based languages.
 	* Performance should be predictable and consistent.
-* `Expressive`
+* `__Expressive__
 # Features
 * Make code easier to read and write.
 * Give the control needed in a true systems programming language.
