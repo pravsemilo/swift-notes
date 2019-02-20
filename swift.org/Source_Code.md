@@ -38,7 +38,7 @@
 		* Source code for Clang with Swift specific additions.
 		* Merged regularly from Clang sources.
 	* [swift-lldb](https://github.com/apple/swift-lldb)
-		* Source code for Swift-enabled versio of LLDB, for debugging Swift programs.
+		* Source code for Swift-enabled version of LLDB, for debugging Swift programs.
 		* Merged regularly from LLDB sources.
 	* [swift-cmark](https://github.com/apple/swift-cmark)
 		* Source code for CommonMark, which is used in Swift compiler.
