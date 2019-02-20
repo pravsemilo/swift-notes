@@ -9,7 +9,7 @@
 * Aside from handful of system-provided modules, such as Darwin on macOS or Glibc on Linux, most dependencies require code to be downloaded and built in order to be used.
 ## Packages
 * Consists of Swift source files and a manifest file.
-* The manifes file, called `Package.swift`, defines the package's name and its contents using the `PackageDescription` module.
+* The manifest file, called `Package.swift`, defines the package's name and its contents using the `PackageDescription` module.
 * A package has one or more targets.
 * Each target specifies a product and may declare one or more dependencies.
 ## Products

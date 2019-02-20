@@ -28,7 +28,7 @@
 		* SIL generation phase lowers the type-checked AST into so-called "raw" SIL.
 		* Design of SIL is described in [docs/SIL.rst](https://github.com/apple/swift/blob/master/docs/SIL.rst).
 	* __SIL guaranteed transformation :__
-		* Implemented in [lib/SILOptimizer/Mandator](https://github.com/apple/swift/tree/master/lib/SILOptimizer/Mandatory).
+		* Implemented in [lib/SILOptimizer/Mandatory](https://github.com/apple/swift/tree/master/lib/SILOptimizer/Mandatory).
 		* Perform additional dataflow diagnostics that affect the correctness of a program (such as use of uninitialized variables).
 		* End result of these transformations is "canonical" SIL.
 	* __SIL Optimizations :__
