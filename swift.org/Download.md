@@ -9,7 +9,7 @@
 * Open Xcode's `Preferences`, navigate to `Components > Toolchains` and select the installed Swift toolchain.
 * Selecting a Swift toolchain affects the Xcode IDE only.
 	* To use Swift toolchain with CLI :
-		* `xcrun --tolchain swift`
+		* `xcrun --toolchain swift`
 		* `xcodebuild --toolchain swift`
 		* Add Swift toolchain to your path.
 		```bash
