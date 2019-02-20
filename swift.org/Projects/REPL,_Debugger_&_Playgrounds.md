@@ -1,6 +1,6 @@
 * Swift.org community makes use of LLDB debugger to provide a REPL and debugging environment.
 * Swift is tightly coupled to the version of Swift compiler embedded in the debugger.
-	* Tight integration of compiler and debugger enables accurate inspectio of Swift types.
+	* Tight integration of compiler and debugger enables accurate inspection of Swift types.
 	* Also enables full-featured expression evaluation in the context of a rapidly evolving language.
 * Developers must use a matched pair of compiler and debugger built using the same sources.
 # Why Combine the REPL and Debugger?
@@ -12,8 +12,8 @@
 * __Consistent result formatting__
 	* Strategy used for textually representing values in the REPL is shared by the debugger.
 # Xcode Playground Support
-* Prior to Swift 3.0 and Xcode 8, playgroud used the version of Swift included in Xcode.
-* Xcode Playgournd Support enables building a Swift toolchain that includes everything necessary to integrate with Xcode 8 playground.
+* Prior to Swift 3.0 and Xcode 8, playground used the version of Swift included in Xcode.
+* Xcode Playground Support enables building a Swift toolchain that includes everything necessary to integrate with Xcode 8 playground.
 * The projects builds two frameworks :
 	* __PlaygroundSupport__
 		* Defines API that may be explicitly referred to by playground code to communicate with Xcode.
