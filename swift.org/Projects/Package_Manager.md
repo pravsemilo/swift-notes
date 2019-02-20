@@ -17,5 +17,8 @@
 * A `library` contains a module that can be imported by other Swift code.
 * An `executable` is a program that can be run by the operating system.
 ## Dependencies
+* A target's dependencies are the modules that are required by code in the package.
+* A dependency consists of a relative or absolute URL to the source of the package and a set of requirements for the version of the package.
+* The role of package manager is to automate the process of downloading and building all of the dependencies for a project.
 # References
 * https://swift.org/package-manager/
