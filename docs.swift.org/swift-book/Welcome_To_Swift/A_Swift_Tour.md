@@ -58,5 +58,10 @@ let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 		"Kaylee" : "Mechanic",
 	]
 	```
+	* Arrays automatically grow as you add elements.
+	```swift
+	shoppingList.append("blue paint")
+	print(shoppingList)
+	```
 # References
 * https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
