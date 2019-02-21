@@ -45,15 +45,18 @@ let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 ```
 * Use three double quotation marks (""") for multi-line strings.
 	* Indentation at the start of each line is removed as long as it matches the indentations of the closing quotation mark.
-```swift
-let quotation = """
-	Even though there's whitespace to the left,
-	the actual lines aren't indented.
-	Except for this line.
-	Double quotes (") can appear without being escaped.
-
-	I still have \(apples + oranges) pieces of fruit.
-	"""
-```
+* Create arrays and dictionaries using brackets ([]).
+	* Access their elements by writing the index or key in brackets.
+	```swift
+	var shoppingList = ["catfish", "water", "tulips"]
+	shoppingList[1] = "bottle of water"
+	```
+	* A comma is allowed after the last element.
+	```swift
+	var occupations = [
+		"Malcolm" : "Captain",
+		"Kaylee" : "Mechanic",
+	]
+	```
 # References
 * https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
