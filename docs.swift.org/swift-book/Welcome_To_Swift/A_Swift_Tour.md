@@ -63,5 +63,16 @@ let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 	shoppingList.append("blue paint")
 	print(shoppingList)
 	```
+	* To create an empty array or dictionary, use the initializer syntax.
+	```swift
+	let emptyArray = [String]()
+	let emptyDictionary = [String: Float]()
+	```
+		* If type information can be infereed, you can write an empty array as [] and an empty dictionary as [:], for example when you set a new value for a variable or pass an argument to a function.
+		```swift
+		let anotherEmptyArray = []
+		let anotherEmptyDictionary = [:]
+		```
+# Control Flow
 # References
 * https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
