@@ -35,5 +35,13 @@ let label = "The width is "
 let width = 94
 let widthLabel = label + String(width)
 ```
+* You can include dynamic values in a string.
+	* Write the value in parentheses and write a backslash (\) before the parentheses.
+```swift
+let apples = 3
+let oranges = 5
+let appleSummary = "I have \(apples) apples."
+let fruitSummary = "I have \(apples + oranges) pieces of fruit."
+```
 # References
 * https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
