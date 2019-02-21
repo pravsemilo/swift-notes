@@ -43,5 +43,17 @@ let oranges = 5
 let appleSummary = "I have \(apples) apples."
 let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 ```
+* Use three double quotation marks (""") for multi-line strings.
+	* Indentation at the start of each line is removed as long as it matches the indentations of the closing quotation mark.
+```swift
+let quotation = """
+	Even though there's whitespace to the left,
+	the actual lines aren't indented.
+	Except for this line.
+	Double quotes (") can appear without being escaped.
+
+	I still have \(apples + oranges) pieces of fruit.
+	"""
+```
 # References
 * https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
