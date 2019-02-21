@@ -9,7 +9,7 @@
 	* Variables are always initialized before use.
 	* Array indices are checked for out of bound errors.
 	* Integers are checked for overflow.
-	* Optionals ensure that `mil` values are handled explicitly.
+	* Optionals ensure that `nil` values are handled explicitly.
 	* Memory is managed automatically.
 	* Error handling allows controlled recovery from unexpected failures.
 * Swift code is compiled and optimized to get the most out of modern hardware.
