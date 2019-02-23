@@ -8,7 +8,7 @@
 * __Fast__
 	* Intended as a replacement for C based languages.
 	* Performance should be predictable and consistent.
-* `__Expressive__
+* __Expressive__
 # Features
 * Make code easier to read and write.
 * Give the control needed in a true systems programming language.
