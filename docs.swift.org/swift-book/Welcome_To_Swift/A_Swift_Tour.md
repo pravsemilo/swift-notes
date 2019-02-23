@@ -74,5 +74,117 @@ let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 	let anotherEmptyDictionary = [:]
 	```
 # Control Flow
+* Conditionals
+	* `if`
+	* `switch`
+* Loops
+	* `for-in`
+	* `while`
+	* `repeat-while`
+* Parentheses around the condition or loop variable are optional.
+* Braces around the body are required.
+```swift
+let individualScores = [75, 43, 103, 87, 21]
+var teamScore = 0
+for score in individualScores {
+	if score > 50 {
+		teamScore += 3
+	} else {
+		teamScore += 1
+	}
+}
+print(teamScore)
+// Prints "11"
+```
+* You can use `if` and `let` together to work with values that might be missing.
+	* These values are represented as optionals.
+	* An optional value either contains a value or contains nil to indicate a missing value.
+	* Write a question mark (?) after the type of a value to mark the value as optional.
+	* If the optional value is nil, the conditional is false and the code in braces is skipped.
+	* Otherwise, the optional value is unwrapped and assigned to the constanct after let, which makes the value available inside the block of code.
+```swift
+var optionalString: String? = "Hello"
+print(optionalString == nil)
+// Prints false
+
+var optionalName: String? = "John Appleseed"
+var greeting = "Hello!"
+if let name = optionalName {
+	greeting = "Hello, \(name)"
+}
+```
+* Another way to handle optional values is to provide a default value using `??` operator.
+```swift
+let nickName: String? = nil
+let fullName: String = "John Appleseed"
+let informalGreeting = "Hi \(nickName ?? fullName)"
+```
+* `switch` supports any kind of data and a wide variety of comparison operators.
+	* After executing the code inside the matched switch case, the program exits from the switch statement.
+	* Execution doesn't continue to the next case.
+	* There is no need to explicitly break out of the switch.
+```swift
+let vegetable = "red pepper"
+switch vegetable {
+case "celery":
+	print("Add some raisins and make ants on a log.")
+case "cucumber", "watercress":
+	print("That would make a good tea sandwich.")
+case let x where x.hasSuffix("pepper"):
+	print("Is it a spicy \(x)?")
+default:
+	print("Everything tastes good in soup.")
+}
+// Prints "Is it a spicy red pepper?"
+```
+* `let` can be used in a pattern to assign the value that matched the pattern to a constant.
+* Use `for-in` to iterate over items in a dictionary by providing a pair of names to use for each key-value pair.
+	* Dictionaries are unordered collections.
+```swift
+let interestingNumbers = [
+	"Prime": [2, 3, 5, 7, 11, 13],
+	"Fibonacci": [1, 1, 2, 3, 5, 8],
+	"Square": [1, 4, 9, 16, 25],
+]
+var largest = 0
+for (kind, numbers) in interestingNumbers {
+	for number in numbers {
+		if number > largest {
+			largest = number
+		}
+	}
+}
+print(largest)
+// Prints "25"
+```
+* Use `while` to repeat a block of code until a condition changes.
+	* Condition can be at the end of loop, ensuring that the loop runs atleast once.
+```swift
+var n = 2
+while n < 100 {
+	n *= 2
+}
+print(n)
+// Prints "128"
+
+var m = 2
+repeat {
+	m *= 2
+} while m < 100
+print(m)
+// Prints "128"
+```
+* You can keep an index in a loop by using "..<".
+	* Use `..<` to omit the upper value.
+	* Use `...` to include the upper value.
+```swift
+var total = 0
+for i in 0..<4 {
+	total += i
+}
+print(total)
+// Prints 6
+```
+# Functions and Closures
 # References
 * https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
