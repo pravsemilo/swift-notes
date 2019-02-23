@@ -41,5 +41,5 @@
 # Platform Support
 * Provide source compatibility for Swift across all platforms.
 * Provide portable implementations of fundamental Apple frameworks without dependencies on the Objetive-C runtime,
-# Referemces
+# References
 * https://swift.org/about/
