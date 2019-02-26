@@ -186,5 +186,23 @@ print(total)
 // Prints 6
 ```
 # Functions and Closures
+* Use `func` to declare a function.
+* Call a function by following its name with a list of arguments in parentheses.
+* Use `->` to separate the parameter names and types from the function's return type.
+```swift
+func greet(person: String, day: String) -> String {
+	return "Hello \(person). today is \(day)."
+}
+greet(person: "Bob", day: "Thursday")
+```
+* By default, functions use their parameter names as labels for their arguments.
+	* You can write a custom argument label before the parameter name.
+	* You can write underscore (_)to use not argument label.
+```swift
+func greet(_ person: String, on day: String) -> String {
+	return "Hello \(person). today is \(day)."
+}
+greet("John", on: "Wednesday")
+```
 # References
 * https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
