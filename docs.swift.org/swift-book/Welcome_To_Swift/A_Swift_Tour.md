@@ -287,5 +287,68 @@ func returnFifteen() -> Int {
 	```swift
 	let sortedNumbers = numbers.sorted { $0 > $1 }
 	```
+# Objects and Classes
+* Use `class` followed by the class's name to create a class.
+	* A property declaration is written the same way as a constant or a variable declaration.
+	* Method and function declarations are written the same way.
+	```swift
+	class Shape {
+		var numberOfSides = 0
+		func simpleDescription() -> String {
+			return "A shape with \(numberOfSides) sides."
+		}
+	}
+	```
+* Create an instance of a class by putting parentheses after the class name.
+	* Use the dot syntax ot access the properties and methods of the instance.
+	```swift
+	var shape = Shape()
+	shape.numberOfSides = 7
+	var shapeDescription = shape.simpleDescription()
+	```
+* Use `init` to create an initializer to setup the instance.
+	* `self`
+	* Every property needs a value assigned - either in its declaration or in the initializer.
+	```swift
+	class NamedShape {
+		var numberOfSides: Int = 0
+		var name: String
+
+		init(name; String) {
+			self.name = name
+		}
+
+		func simpleDescription() -> String {
+			return "A shape with \(numberOfSides) sides."
+		}
+	}
+	```
+* Use `deinit` to create a deinitializer if you need to perform some cleanup before the object is deallocated.
+* Subclasses include their superclass namea after their class name, separated by a colon.
+	* Methods on a subclass that override the superclass's implementation are marked with `override`.
+	* Overridding a method by accident, without `override` is detected by the compiler as an error.
+	* The compiler also detects methods with `override` that don't actually override any method in superclass.
+	```swift
+	class Square : NamedShape {
+		var sideLength: Double
+
+		init(sideLength: Double, name: String) {
+			self.sideLength = sideLength
+			super.init(name: name)
+			numberOfSides = 4
+		}
+
+		func area -> Double {
+			return sideLength * sideLength
+		}
+
+		override func simpleDescription() -> String {
+			return "A square with sides of length \(sideLength)."
+		}
+	}
+	let test = Square(sideLenght: 5.2, name: "My test square")
+	test.area()
+	test.simpleDescription()
+	```
 # References
 * https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
