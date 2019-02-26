@@ -250,8 +250,7 @@ func makeIncrementer() -> ((Int) -> Int) {
 var increment = makeIncrementer()
 increment(7)
 ```
-
-	* A function can take another function as its arguments.
+* A function can take another function as its arguments.
 ```swift
 func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
 	for item in list {
