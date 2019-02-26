@@ -266,5 +266,26 @@ func returnFifteen() -> Int {
 	var numbers = [20, 19, 7, 12]
 	hasAnyMatches(list: numbers, condition: lessThanTen)
 	```
+* Functions are a special case of closures ; blocks of code that can be called later.
+	* This code in a closure has access to things like variables and functions that were available in the scope where the closure was created, even if the closure is in a different scope when it is executed.
+	* You can create a closure without a name by surrounding code with braces ({}).
+	* Use `in` to separate the arguments and return type from the body.
+	```swift
+	numbers.map({ (number: Int) -> Int int
+		let result = 3 * number
+		return result
+	})
+	```
+	* When a closure's type is already known, such as the callback for a delegate, you can omit the type of its parameters, its return type or both.
+	* Single statement closures implicitly return the value of their only statement.
+	```swift
+	let mappedNumbers = numbers.map({ number in 3 * number })
+	```
+	* You can refer to parameters by number instead of name.
+	* A closure passed as the last argument to a function can appear immediately after the parentheses.
+	* When a closure is the only argument to a function, you can omit the parentheses entirely.
+	```swift
+	let sortedNumbers = numbers.sorted { $0 > $1 }
+	```
 # References
 * https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
