@@ -324,7 +324,7 @@ func returnFifteen() -> Int {
 	}
 	```
 * Use `deinit` to create a deinitializer if you need to perform some cleanup before the object is deallocated.
-* Subclasses include their superclass namea after their class name, separated by a colon.
+* Subclasses include their superclass named after their class name, separated by a colon.
 	* Methods on a subclass that override the superclass's implementation are marked with `override`.
 	* Overridding a method by accident, without `override` is detected by the compiler as an error.
 	* The compiler also detects methods with `override` that don't actually override any method in superclass.
@@ -350,5 +350,74 @@ func returnFifteen() -> Int {
 	test.area()
 	test.simpleDescription()
 	```
+* Properties can have getters and setters.
+	* In the setter the new value has the implicit value `newValue`.
+	* You can provide an explicit name in the parentheses after set.
+```swift
+class EquilateralTriangle: NamedShape {
+	var sideLength: Double = 0.0
+
+	init (sideLength: Double, name: String) {
+		self.sideLength = sideLength
+		super.init(name: name)
+		numberOfSides = 3
+	}
+
+	var perimeter: Double {
+		get {
+			return 3.0 * sideLength
+		}
+		set {
+			sideLength = newValue / 3.0
+		}
+	}
+
+	override func simpleDescription() -> String {
+		return "An equilaterla triangle with sides of length \(sideLength)."
+	}
+}
+
+var triangle = EquilateralTriangle(sideLength: 3.1, name: "A Triangle")
+print(triangle.perimeter)
+// Prints 9.3
+triangle.perimeter = 9.9
+print(triangle.sideLength)
+// Prints 3.3
+```
+* If you don't need to compute the property by still need to provide code that is run before and after setting a new value, use `willSet` and `didSet`.
+	* The code you provide is run any time the value changes outside of an initializer.
+```swift
+class TriangleAndSquare {
+	var triangle: EquilaternalTriangle {
+		willSet {
+			square.sideLength = newValue.sideLength
+		}
+	}
+	var square: Square {
+		willSet {
+			triangle.sideLength = newValue.sideLength
+		}
+	}
+	init(size: Double, name: String) {
+		square = Square(sideLength: size, name: name)
+		triangle = EquilateralTriangle(sideLength: size, name: name)
+	}
+}
+var triangleAndSquare = TriangleAndSquare(size: 10, name: "Another test shape")
+print(triangleAndSquare.square.sideLength)
+// Prints "10.0"
+print(triangleAndSquare.triangle.sideLength)
+// Prints "10.0"
+triangleAndSquare.square = Square(sideLength: 50, name: "Larger square")
+print(triangleAndSquare.triangle.sideLength)
+// Prints "50.0"
+```
+* When working with optional values, you can write `?` before operations like methods, properties and subscripting.
+	* If the value before the `?` is nil, everything after the `?` is ignored and the value of whole expression is `nil`.
+	* Otherwise the optional value is unwrapped, and everything after the `?` acts on the unwrapped value.
+```swift
+let optionalSquare: Square? = Square(:sideLength: 2.5, name: "Optional Square")
+let sideLength = optionalSquare?.sideLength
+```
 # References
 * https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
