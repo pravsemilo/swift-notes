@@ -452,7 +452,7 @@ let aceRawValue = ace.rawValue
 * Use `rawValue` to access the raw value of an enumeration case.
 * Use `init?(rawValue:)` initializer to make an instance of an enumeration from a raw value.
 	* It returns either the enumeration case or nil.
-``swift
+```swift
 if let convertedRank = Rank(rawValue: 3) {
 	let threeDescription = convertedRank.simpleDescription()
 }
