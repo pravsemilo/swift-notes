@@ -605,7 +605,7 @@ do {
 ```
 * You can provide multiple `catch` blocks that handle specific errors.
 	* You write a pattern after `catch` just as you do after `case` in a switch.
-``swift
+```swift
 do {
 	let printerResponse = try send(job:1440, toPrinter: "Gutenberg")
 	print(printerResponse)
@@ -642,5 +642,45 @@ func fridgeContains(_ food: String) -> Bool {
 fridgeContains("banana")
 print(fridgeIsOpen)
 ```
+# Generics
+* Write a name inside angle brackets to make a generic function or type.
+```swift
+func makeArray<Item>(repeating item: Item, numberOfTimes: Int) -> [Item] {
+	var result = [Item]()
+	for _ in 0..<numberOfTImes {
+		result.append(item)
+	}
+	return result
+}
+makeArray(repeating: "knock", numberOfTImes: 4)
+```
+* You can make generic forms for functions and methods, as well as classes, enumerations and structures.
+```swift
+enum OptionalValue<Wrapped> {
+	case none
+	case some(Wrapped)
+}
+var possibleInteger: OptionalValue<Int> = .none
+possibleInteger = .some(100)
+```
+* Use `where` right before the body to specify a list of requirements.
+```swift
+func anyCommonElement<T: Sequence, U: Sequence>(_ lhs: T, _ rhs: U) ->
+	Bool
+		where T.Element: Equatable, T.Element == U.Element
+{
+	for lhsItem in lhs {
+		for rhsItem in rhs {
+			if lhsItem == rhsItem
+				return true
+			}
+		}
+	}
+	return false
+}
+
+anyCommonELements([1, 2, 3], [3])
+```
+* Writing `<T: Equatable>` is same as writing `<T> ... where T: Equatable`.
 # References
 * https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
