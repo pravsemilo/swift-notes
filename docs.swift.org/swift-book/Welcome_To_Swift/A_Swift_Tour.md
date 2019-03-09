@@ -573,5 +573,74 @@ let protocolValue: ExampleProtocol = a
 print(protocolValue.simpleDescription)
 // Prints "A very simple class.  Now 100% adjusted."
 ```
+# Error Handling
+* You reprsent errors using any type that adopts the `Error` protocol.
+```swfit
+enum PrinterError: Error {
+	case outOfPaper
+	case noToner
+	case onFire
+}
+```
+* Use `throw` to throw an error and `throws` to mark a function that can throw an error.
+	* If you throw an error in a function, the function returns immediately and the code that called the functions handles the error.
+```swift
+func send(job: Int, toPrinter printerName: String) throws -> String {
+	if printerName == "Never Has Toner" {
+		throw PrinterError.noToner
+	}
+	return "Job sent"
+}
+```
+* Use `do-catch` to handle errors.
+	* Inside the `do` block, you mark the code that can throw an error by writing `try` in front of it.
+	* Inside the `catch` block, the error is automatically given the name `error`, unless given a different name.
+```swift
+do {
+	let printerResponse = try send(job: 1040, toPrinter: "Bi Sheng")
+	print(printerResponse)
+} catch {
+	print(error)
+}
+```
+* You can provide multiple `catch` blocks that handle specific errors.
+	* You write a pattern after `catch` just as you do after `case` in a switch.
+``swift
+do {
+	let printerResponse = try send(job:1440, toPrinter: "Gutenberg")
+	print(printerResponse)
+} catch PrinterError.onFire {
+	print("I'll just put this over here, with the rest of the fire.")
+} catch let printerError as PrinterError {
+	print("Printer error: \(printerError).")
+} catch {
+	print(error)
+}
+```
+* Use `try?` to convert the result to an optional.
+	* If the function throws an error, the specific error is discarded and the result is nil.
+	* Otherwise, the result is an optional containing the value that the function returned.
+```swift
+let printerSuccess = try? send(job: 1884, toPrinter: "Mergenthaler")
+let printerFailure = try? send(job: 1885, toPrinter: "Never Has Toner")
+```
+* Use `defer` to write a block of code that is executed after all other code in the function, just before the function returns.
+	* Code is executed regardless of whether the function throws an error.
+```swift
+var fridgeIsOpen = false
+var fridgeContent = ["milk", "eggs", "leftovers"]
+
+func fridgeContains(_ food: String) -> Bool {
+	fridgeIsOpen = true
+	defer {
+		fridgeIsOpen = false
+	}
+
+	let result - fridgeContent.contains(food)
+	return result
+}
+fridgeContains("banana")
+print(fridgeIsOpen)
+```
 # References
 * https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
