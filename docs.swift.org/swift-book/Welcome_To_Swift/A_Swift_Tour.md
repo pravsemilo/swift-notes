@@ -518,5 +518,60 @@ struct Card {
 let threeOfSpades = Card(rank: .three, suit: .spades)
 let threeOfSpadesDescription = threeOfSpades.simpleDescription()
 ```
+# Protocols and Extensions
+* Use `protocol` to declare a protocol.
+```swift
+protocol ExampleProtocol
+	var simpleDescription: String { get}
+	mutating func adjust()
+```
+* Classes, enumerations and structs can all adopt protocols.
+	* Notice the use of `mutating` keyword in the declaration of `SimpleStructure` to mark a method that modifies the structure.
+	* The declaration of `SimpleClass` doesn't need any of it methods marked as mutating becuase methods on a class can always modify the class.
+```swift
+class SimpleClass: ExampleProtocol {
+	var simpleDescription: String = "A very simple class."
+	var anotherProperty: Int = 69105
+	func adjust() {
+		simpleDescription += " Noew 100% adjusted."
+	}
+}
+
+var a = SimpleClass()
+a.adjust()
+let aDescription = a.simpleDescription
+
+struct SimpleStructure: ExampleProtocol {
+	var simpleDescription: String = "A simple structure"
+	mutating func adjust() {
+		simpleDescription += " (adjusted)"
+	}
+}
+
+var b = SimpleStructure()
+b.adjust()
+let bDescription = b.simpleDescription
+```
+* Use `extension` to add functionality to an existing type, such as new method and computed properties.
+	* You can use an extension to add protocol conformance to a type that is declared elsewhere or even to a type that you imported from a library or frammework.
+```swift
+extension Int: ExampleProtocol
+	var simpleDescription: String {
+		return "The number \(self)"
+	}
+	mutating func adjust() {
+		self += 42
+	}
+}
+print(7.simpleDescription)
+```
+* You can use a protocol name just like any other named type.
+	* For example, to create a collection of objects that have different types but all conform to a single protocol.
+	* When you work with values whose type is a protocol type, methods outside the protocol definition are not available.
+```swift
+let protocolValue: ExampleProtocol = a
+print(protocolValue.simpleDescription)
+// Prints "A very simple class.  Now 100% adjusted."
+```
 # References
 * https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
