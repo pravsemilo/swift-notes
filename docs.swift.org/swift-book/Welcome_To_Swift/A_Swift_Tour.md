@@ -419,5 +419,104 @@ print(triangleAndSquare.triangle.sideLength)
 let optionalSquare: Square? = Square(:sideLength: 2.5, name: "Optional Square")
 let sideLength = optionalSquare?.sideLength
 ```
+# Enumerations and Structures
+* Use `enum` to create an enumeration.
+* Enumerations can have methods associated with them.
+```swift
+enum Rank: Int {
+	case ace = 1
+	cate two, three, four, five, six, seven, eight, nine, ten
+	case jack, queeen, king
+
+	func simpleDescription() -> String {
+		switch self {
+		case .ace:
+			return "ace"
+		case .jack
+			return "jack"
+		case .queen
+			return "queen"
+		case .king
+			return "king"
+		default:
+			return String(self.rawValue)
+		}
+	}
+}
+let ace = Rank.ace
+let aceRawValue = ace.rawValue
+```
+* By default, Swift assigns the raw values starting at zero and incrementing by one each time.
+	* You can change this behavior by explicitly specifying values.
+	* You can also use string or floating-point numbers as the raw type for an enumeration.
+* Use `rawValue` to access the raw value of an enumeration case.
+* Use `init?(rawValue:)` initializer to make an instance of an enumeration from a raw value.
+	* It returns either the enumeration case or nil.
+``swift
+if let convertedRank = Rank(rawValue: 3) {
+	let threeDescription = convertedRank.simpleDescription()
+}
+```
+* The case values of an enumeration are the actual values.
+	* In fact, in cases where there isn't a meaningful raw value, you don't have to provide one.
+	* Notice the two ways the `hearts` case of the enumeration is referred above.
+		* When assigning, a value to the `hearts` constant, the enumeration case `Suit.hearts` is referred to by its full name.
+		* Inside the switch, the enumeration case is referred to by the abbreviated form `.hearts` because the value of `self` is already known to be a suit.
+```swift
+enum Suit {
+	case spades, hearts, diamonds, clubs
+
+	func simpleDescription() -> String {
+		switch self {
+		case .spades
+			return "spades"
+		case .hearts
+			return "hearts"
+		case .diamonds
+			return "diamonds"
+		case .clubs
+			return "clubs"
+		}
+	}
+
+}
+
+let hearts = Suit.hearts
+let heartsDescription = hearts.simpleDescription()
+```
+* If an enumeration has raw values, those values are determined as part of the declaration.
+	* This means every instance of a particular enumeration case always has the same raw value.
+* Another choice for enumeration cases if to have values associated with the case.
+	* This values are determined when you make the instance.
+	* They can be different for each instance of an enumeration case.
+```swift
+enum ServerResponse {
+	case result(String, String)
+	case failure(String)
+}
+
+let success = ServerResponse.result("6:00 am", "8:09 pm")
+let failure = ServerResponse.failure("Out of cheese.")
+
+switch success {
+	case let .result(sunrise, sunset):
+		print("Sunrise is at \(sunrise) and sunset is at \(sunset).")
+	case let.failre(message)
+		print("Failure ... \(message))
+}
+```
+* Use `struct` to create a structure.
+	* Structures support many of the same behaviors as classes, including methods and initializers.
+	* Structures are always copied when they are passed around, but classes are passed by reference.
+```swift
+struct Card {
+	var rank: Rank
+	var suit: Suit
+
+	func simpleDescription() -> String {
+		return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+let threeOfSpades = Card(rank: .three, suit: .spades)
+let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+```
 # References
 * https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html
