@@ -40,6 +40,6 @@
 * [XCode Playground Support](https://swift.org/lldb/#xcode-playground-support) - Enable playgrounds in XCode.
 # Platform Support
 * Provide source compatibility for Swift across all platforms.
-* Provide portable implementations of fundamental Apple frameworks without dependencies on the Objective-C runtime,
+* Provide portable implementations of fundamental Apple frameworks without dependencies on the Objective-C runtime.
 # References
 * https://swift.org/about/
