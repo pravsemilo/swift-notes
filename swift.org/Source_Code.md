@@ -18,7 +18,7 @@
 * [swift-llbuild](https://github.com/apple/swift-llbuild)
 	* Source code for llbuild, a low level build system used by Swift package manager.
 * [swift-tools-support-core](https://github.com/apple/swift-tools-support-core)
-	* Contains common infrastructural code for both SwfitPM and llbuild.
+	* Contains common infrastructural code for both SwiftPM and llbuild.
 # Xcode Playground Support
 * [swift-xcode-playground-support](https://github.com/apple/swift-xcode-playground-support)
 	* Source code to enable playground integration with Xcode.
