@@ -1,14 +1,19 @@
-* General purpose programming language.
+* General purpose programming language built using a modern approach to safety, performance and software design patterns.
 * Can be used for system programming, mobile and desktop apps and scaling up to cloud services.
 * Designed to make writing and maintaining correct programs easier for the developer.
-* __Safe__
-	* Most obvious way to write code should behave in a safe manner.
-	* Undefined behavior is enemy of safety.
-	* Opting for saftey means Swift will feel strict.
-* __Fast__
-	* Intended as a replacement for C based languages.
-	* Performance should be predictable and consistent.
-* __Expressive__
+	* Most obvious way to write Swift code must also be :
+		* __Safe__
+			* Most obvious way to write code should behave in a safe manner.
+			* Undefined behavior is enemy of safety.
+			* Opting for saftey means Swift will feel strict.
+				* Clarity saves time in the long run.
+		* __Fast__
+			* Intended as a replacement for C based languages.
+			* Performance should be predictable and consistent.
+		* __Expressive__
+* Tools are a critical part of the Swift ecosystem.
+	* Swift-based playground in Xcode.
+	* Web-based REPL when working with Linux server-side code.
 # Features
 * Make code easier to read and write.
 * Give the control needed in a true systems programming language.
