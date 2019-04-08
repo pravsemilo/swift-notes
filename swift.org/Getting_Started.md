@@ -1,16 +1,18 @@
 # Installing Swift
 ## On macOS
+* Default location for the toolchain on macOS is `/Library/Developer/Toolchains`.
 * To make the latest installed toolchain available.
 ```bash
 $ export TOOLCHAINS=swift
 ```
 * To select a different installed toolchain, use its identifier in the `TOOLCHAINS` variable.
-```bash
-$ /usr/libexec/PlistBuddy -c "Print CFBundleIdentifier:" /Library/Developer/Toolchains/swift-4.0-RELEASE.xctoolchain/Info.plist
-org.swift.4020170919
+	* THe identifier can be found in toolchain's `Info.plist` file.
+	```bash
+	$ /usr/libexec/PlistBuddy -c "Print CFBundleIdentifier:" /Library/Developer/Toolchains/swift-4.0-RELEASE.xctoolchain/Info.plist
+	org.swift.4020170919
 
-$ export TOOLCHAINS=org.swift.4020170919
-```
+	$ export TOOLCHAINS=org.swift.4020170919
+	```
 ## On Linux
 * Install clang.
 ```bash
