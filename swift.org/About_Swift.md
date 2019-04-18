@@ -8,7 +8,7 @@
 			* Opting for saftey means Swift will feel strict.
 				* Clarity saves time in the long run.
 		* __Fast__
-			* Intended as a replacement for C based languages.
+			* Intended as a replacement for C-based languages.
 			* Performance should be predictable and consistent.
 		* __Expressive__
 			* Swift benefits from advancements in computer science to offer a syntax that is joy to use.
@@ -41,7 +41,7 @@
 * `Optional` - In case where `nil` is appropriate.
 	* Swift syntax forces you to safely deal with it using `?` to indicate to compiler that you understand the behavior and will handle it safely.
 # Swift.org and Open Source
-* On December 3, 2015, Swift language, supporting libraries, debugged and package manager were published under Apache 2.0 license.
+* On December 3, 2015, Swift language, supporting libraries, debugged and package manager were published under Apache 2.0 license with a Runtime Library Exception.
 ## Projects
 * [Swift Compiler](https://swift.org/compiler-stdlib/) - Command line tool.
 * [Standard Library](https://swift.org/compiler-stdlib/) - Bundled as part of language.
@@ -51,7 +51,9 @@
 * [XCode Playground Support](https://swift.org/lldb/#xcode-playground-support) - Enable playgrounds in XCode.
 # Platform Support
 * Swift is now free to be ported across a wide range of platforms, devices and use cases.
-* Provide source compatibility for Swift across all platforms.
-* Swift core libraries project aims to provide portable implementations of fundamental Apple frameworks without dependencies on the Objective-C runtime.
+* Provide source compatibility for Swift across all platforms, even though the actual implementation may differ across platforms.
+	* Apple platforms include the Objective-C runtime to access Apple platform frameworks like UIKit, AppKit etc.
+	* On other platforms, Objective-C runtime is not present.
+* Swift core libraries project aims to provide portable implementations of fundamental Apple frameworks (such as Foundation) without dependencies on the Objective-C runtime.
 # References
 * https://swift.org/about/
