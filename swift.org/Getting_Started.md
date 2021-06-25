@@ -6,7 +6,7 @@
 $ export TOOLCHAINS=swift
 ```
 * To select a different installed toolchain, use its identifier in the `TOOLCHAINS` variable.
-	* THe identifier can be found in toolchain's `Info.plist` file.
+	* The identifier can be found in toolchain's `Info.plist` file.
 	```bash
 	$ /usr/libexec/PlistBuddy -c "Print CFBundleIdentifier:" /Library/Developer/Toolchains/swift-4.0-RELEASE.xctoolchain/Info.plist
 	org.swift.4020170919
@@ -67,6 +67,7 @@ $ swift package init
 ## Building an Executable
 * A target is considered as an executable if it contains a file named `main.swift`.
 * The package manager will compile that file into a binary executable.
+* You can create an executable named `Hello` using :
 ```bash
 $ mkdir Hello
 $ cd Hello
